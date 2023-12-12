@@ -8,6 +8,7 @@ function UserPanel() {
         method="POST"
         name="contact"
         data-netlify="true"
+        action="/"
       >
         <h3 className="text-primary mb-6 md:mb-4">Contact Us</h3>
         <div className="flex gap-4">
