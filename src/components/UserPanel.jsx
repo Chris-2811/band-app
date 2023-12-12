@@ -15,11 +15,13 @@ function UserPanel() {
             type="text"
             className="block placeholder-primary text-body w-full mb-4 border-2 py-2 px-4 bg-transparent outline-none"
             placeholder="Name"
+            name="name"
           />
           <input
             type="email"
             className="block placeholder-primary text-body w-full mb-4 border-2 py-2 px-4 bg-transparent outline-none"
             placeholder="Email"
+            name="email"
           />
         </div>
         <div className="flex gap-4">
@@ -27,17 +29,20 @@ function UserPanel() {
             type="text"
             className="block placeholder-primary text-body w-full mb-4 border-2 py-2 px-4 bg-transparent outline-none"
             placeholder="Betreff"
+            name="subject"
           />
           <input
             type="tel"
             className="block placeholder-primary text-body w-full mb-4 border-2 py-2 px-4 bg-transparent outline-none"
             placeholder="Telefon"
+            name="phone"
           />
         </div>
         <textarea
           rows={5}
           className="block placeholder-primary text-body w-full mb-4 border-2 py-2 px-4 bg-transparent outline-none"
           placeholder="Your message"
+          name="message"
         />
         <button
           type="submit"
