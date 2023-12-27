@@ -15,7 +15,8 @@ export default {
         /* primary: '#ff9800', */
         /* primary: 'rgb(216, 235, 247)', */
 
-        body: 'rgb(205, 205, 205)',
+        body: '#595959',
+        'body-dark': 'rgb(205, 205, 205)',
         'dark-bg': '#1f1f1f',
       },
       placeholderColor: {

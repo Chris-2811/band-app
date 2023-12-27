@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useNavigate } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Home, Band, Tour, Gallery, Listen } from './pages/index.js';
