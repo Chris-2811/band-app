@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 function UserPanel() {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
-  const [formData, setFormDate] = useState({
+  const [formData, setFormData] = useState({
+    'form-name': 'contact',
     name: '',
     email: '',
     subject: '',
@@ -14,13 +15,34 @@ function UserPanel() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-    navigate('/home');
-    console.log('success');
+
+    // Encode form data in application/x-www-form-urlencoded format
+    const encodedData = Object.keys(formData)
+      .map(
+        (key) =>
+          encodeURIComponent(key) + '=' + encodeURIComponent(formData[key])
+      )
+      .join('&');
+
+    // Send form data using a POST request
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodedData,
+    })
+      .then(() => {
+        setSubmitted(true);
+        navigate('/home');
+        console.log('success');
+      })
+      .catch((error) => alert(error));
+
+    // Prevent form from being submitted the default way
+    return false;
   }
 
   function handleChange(e) {
-    setFormDate({
+    setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
@@ -39,7 +61,7 @@ function UserPanel() {
         <h3 className="text-primary mb-6 md:mb-4">Contact Us</h3>
         <div className="flex gap-4">
           <input type="hidden" name="bot-field" />
-          <input type="hidden" name="contact" value="contact" />
+          <input type="hidden" name="form-name" value="contact" />
           <input
             type="text"
             className="block placeholder-body text-body w-full mb-4 border-2 border-body py-2 px-4 bg-transparent outline-none"
