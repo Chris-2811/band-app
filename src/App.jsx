@@ -10,7 +10,7 @@ function App() {
     <DarkModeProvider>
       <Router>
         <Navbar />
-        <main className="mt-12 md:mt-20">
+        <main className="mt-6 md:mt-12 lg:mt-18">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />

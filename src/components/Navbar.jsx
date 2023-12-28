@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { FaYoutube, FaFacebookF } from 'react-icons/fa';
 import DarkToggle from './DarkToggle';
 
 function Navbar() {
@@ -10,14 +9,18 @@ function Navbar() {
   function openMobileMenu(e) {
     if (e.currentTarget.getAttribute('aria-expanded') === 'false') {
       e.currentTarget.setAttribute('aria-expanded', 'true');
+      setMobileNavToggle(true);
       document
         .querySelector('.mobile-menu')
         .setAttribute('data-visible', 'true');
+
+      setMobileNavToggle(true);
     } else {
       e.currentTarget.setAttribute('aria-expanded', 'false');
       document
         .querySelector('.mobile-menu')
         .setAttribute('data-visible', 'false');
+      setMobileNavToggle(false);
     }
   }
 
@@ -30,7 +33,7 @@ function Navbar() {
     return (
       <>
         <li className="uppercase">
-          <NavLink className="nav-link" to="/home" onClick={() => closeMenu()}>
+          <NavLink className="nav-link" to="/" onClick={() => closeMenu()}>
             Home
           </NavLink>
         </li>
@@ -67,54 +70,48 @@ function Navbar() {
   }
 
   return (
-    <div className="container pt-10 flex justify-between items-center">
+    <div className="container relative pt-10 flex justify-between items-center">
       <div className="flex items-center gap-8">
         <Link to="/home">
-          <img src={logo} alt="logo" className="w-32" />
+          <img src={logo} alt="logo" className="w-32 logo" />
         </Link>
         {/* Nav */}
         <nav aria-label="Primary-navigation" className="hidden md:block">
-          <ul className="flex items-center gap-10 uppercase" role="list">
+          <ul
+            className="flex items-center md:gap-6 lg:gap-10 uppercase"
+            role="list"
+          >
             <NavigationLinks />
           </ul>
         </nav>
-        <DarkToggle />
       </div>
 
-      {/* Socials */}
-      <ul className="md:flex items-center gap-4 hidden">
-        <li className="border border-black dark:border-white p-2 rounded-full cursor-pointer hover:bg-primary hover:border-primary dark:hover:border-primary">
-          <Link>
-            <FaFacebookF size={20} className="text-black dark:text-white" />
-          </Link>
-        </li>
-        <li className="border border-black dark:border-white cursor-pointer  p-2 rounded-full hover:bg-primary hover:border-primary dark:hover:border-primary">
-          <Link
-            to="https://www.youtube.com/channel/UCJ_381K6ri9uSfinSnLpCVQ"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <FaYoutube size={20} className="text-black dark:text-white" />
-          </Link>
-        </li>
-      </ul>
+      <div className=" hidden md:flex">
+        <DarkToggle />
+      </div>
       {/* Mobile Menu */}
       <div
-        className="mobile-nav-toggle  md:hidden relative w-14 h-14   border rounded-lg"
+        className="mobile-nav-toggle z-10  md:hidden relative w-14 h-14  border border-body dark:border-white rounded-lg"
         aria-expanded="false"
         onClick={(e) => openMobileMenu(e)}
       >
-        <div className="one "></div>
-        <div className="two "></div>
-        <div className="three absolute "></div>
+        <div className="one bg-body dark:bg-white"></div>
+        <div className="two bg-body dark:bg-white "></div>
+        <div className="three bg-body dark:bg-white absolute "></div>
       </div>
 
-      <div className="mobile-menu " data-visible="false">
-        <nav aria-label="Primary-navigation">
+      <div
+        className="mobile-menu bg-gray-50 text-dark-bg dark:bg-mobile-menu"
+        data-visible="false"
+      >
+        <nav aria-label="Primary-navigation z-100">
           <ul role="list" className="flex flex-col uppercase gap-6">
             <NavigationLinks />
           </ul>
         </nav>
+        <div className="mt-8">
+          <DarkToggle />
+        </div>
       </div>
     </div>
   );

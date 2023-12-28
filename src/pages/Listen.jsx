@@ -1,4 +1,6 @@
 import React from 'react';
+import { useEffect, useContext } from 'react';
+import DarkModeContext from '../context/DarkModeContext';
 import Heading from '../components/Heading';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player/youtube';
@@ -7,12 +9,20 @@ import UserPanel from '../components/UserPanel';
 function Listen() {
   const videoUrl = 'https://youtu.be/GbAJLkAf4es'; // Replace with your YouTube video URL
 
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+
+  useEffect(() => {
+    if (localStorage.getItem('dark-mode') === 'true') {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
   return (
     <div className="container">
       <div className="md:flex md:justify-between pb-10 border-b-4">
         <div className="md:w-[30%]">
           <Heading />
-          <p className="text-body pl-8">
+          <p className="text-body dark:text-white pl-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
             vero ex deleniti? Suscipit officia quod magnam reprehenderit enim
             eius ad, aliquid dolorum! Consequuntur praesentium in doloremque

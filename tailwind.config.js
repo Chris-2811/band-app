@@ -4,6 +4,7 @@ export default {
   darkMode: 'class',
   theme: {
     screens: {
+      xs: '480px',
       sm: '640px',
       md: '768px',
       lg: '1020px',
@@ -16,6 +17,7 @@ export default {
         /* primary: 'rgb(216, 235, 247)', */
 
         body: '#595959',
+        'mobile-menu': 'rgb(31, 31, 31)',
         'body-dark': 'rgb(205, 205, 205)',
         'dark-bg': '#1f1f1f',
       },
