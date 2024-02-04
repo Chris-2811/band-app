@@ -18,7 +18,7 @@ function Tour() {
     <div className="container">
       <Heading title={'Tour Daten'} />
 
-      <ul className="mt-14 border-b-4 pb-16">
+      <ul className="mt-6 md:mt-4 border-b-4 pb-16">
         <li className="hidden lg:grid grid-cols-3 gap-4 lg:gap-10 xl:gap-16 py-8 border-b-2">
           <h3 className="text-lg dark:text-white">Was?</h3>
           <h3 className="text-lg dark:text-white">Wann?</h3>
