@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaYoutube, FaFacebookF } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { data } from '../data';
 
 function UserPanel() {
   const [submitted, setSubmitted] = useState(false);
@@ -71,16 +72,16 @@ function UserPanel() {
   }
 
   return (
-    <div className="md:flex  md:justify-between pt-8 pb-14">
+    <div className="lg:flex lg:justify-between  lg:gap-[120px] xl:gap-[150px] pt-8 pb-14">
       <form
         onSubmit={handleSubmit}
-        className="max-w-[650px] md:w-[60%]"
+        className=" lg:w-[67.5%]"
         method="POST"
         name="contact"
         data-netlify="true"
         netlify-honeypot="bot-field"
       >
-        <h3 className="text-primary mb-6 md:mb-4">Contact Us</h3>
+        <h3 className="text-primary text-lg mb-6 md:mb-4">Kontaktiere Uns</h3>
         <div className="flex flex-col xs:flex-row xs:gap-4">
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
@@ -120,9 +121,9 @@ function UserPanel() {
           />
         </div>
         <textarea
-          rows={5}
+          rows={8}
           className="block placeholder-body text-body caret-primary  dark:text-white dark:placeholder-white dark:border-white w-full mb-4 border  border-body py-2 px-4 bg-transparent outline-none"
-          placeholder="Your message"
+          placeholder="Geben Sie hier Ihren Text ein..."
           name="message"
           value={formData.message}
           onChange={handleChange}
@@ -142,27 +143,46 @@ function UserPanel() {
           <div className="mt-4 text-red-500">Bitte alle Felder ausfüllen!</div>
         )}
       </form>
-      <div className="mt-12 md:mt-0">
-        <h3 className="text-primary mb-4">Management & Booking</h3>
-        <p className=" text-body dark:text-white max-w-[200px]">
-          Email:info@desbrassdscho.de | Tel.: 09123 987340
-        </p>
-        <ul className="flex mt-7 items-center gap-2">
-          <li className="border border-black dark:border-white p-2 rounded-full cursor-pointer hover:bg-primary hover:border-primary dark:hover:border-primary">
-            <Link>
-              <FaFacebookF size={20} className="text-black dark:text-white" />
-            </Link>
-          </li>
-          <li className="border border-black dark:border-white cursor-pointer  p-2 rounded-full hover:bg-primary hover:border-primary dark:hover:border-primary">
-            <Link
-              to="https://www.youtube.com/channel/UCJ_381K6ri9uSfinSnLpCVQ"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <FaYoutube size={20} className="text-black dark:text-white" />
-            </Link>
-          </li>
-        </ul>{' '}
+      <div className="lg:w-[32.5%]">
+        <div className="mt-12 lg:mt-0">
+          <h3 className="text-primary mb-3 text-lg">Management & Booking</h3>
+          <p className=" text-body dark:text-white max-w-[210px]">
+            Email: {data.email} | Tel.: {data.tel} <br /> | Mobil: {data.mobile}
+          </p>
+          <ul className="flex mt-5 items-center gap-2">
+            <li className="border border-black dark:border-white p-2 rounded-full cursor-pointer hover:bg-primary hover:border-primary dark:hover:border-primary">
+              <Link
+                to="https://m.facebook.com/profile.php?id=100063614556181"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebookF size={20} className="text-black dark:text-white" />
+              </Link>
+            </li>
+            <li className="border border-black dark:border-white cursor-pointer  p-2 rounded-full hover:bg-primary hover:border-primary dark:hover:border-primary">
+              <Link
+                to="https://www.youtube.com/channel/UCJ_381K6ri9uSfinSnLpCVQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FaYoutube size={20} className="text-black dark:text-white" />
+              </Link>
+            </li>
+          </ul>{' '}
+        </div>
+        <div>
+          <h3 className="text-primary text-lg mt-5 mb-3">Impressum</h3>
+          <h4 className="font-bold  text-body dark:text-white mb-2">
+            Inhaltlich verantwortlich
+          </h4>
+          <p className=" text-body dark:text-white max-w-[220px] lg:max-w-full">
+            Vertreten durch Johannes Mehring, Markus Metz, Anna Mörtel und
+            Christian Mörtel, Hanna Roth, Manuel Vildosola und Martin Wiesinger.
+          </p>
+          <p className=" text-body dark:text-white max-w-[210px] mt-2">
+            Neuhäuserstraße 14 91207 Lauf Schönberg
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import about from '../assets/about-us.jpg';
-import plus from '../assets/design-plus.png';
 import UserPanel from '../components/UserPanel';
 import Heading from '../components/Heading';
 import DarkModeContext from '../context/DarkModeContext';
+import { bandData } from '../data';
 
 function Band() {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
@@ -20,73 +20,36 @@ function Band() {
         <img src={about} alt="" className="w-full h-[20rem] object-cover" />
         <div className="mt-14 pb-16 border-b-4">
           <Heading title={'Die Band'} />
-          <div className="flex flex-wrap justify-start gap-8 mt-12 pl-8">
-            <div>
-              <h2 className="text-primary text-lg font-bold">
-                Christian Mörtel
-              </h2>
-              <p className="text-primary">// Trompete</p>
-              <p className="mt-6 max-w-[230px] text-body dark:text-white ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                quasi.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-primary text-lg font-bold">Hannah Roth</h2>
-              <p className="text-primary">// Trompete</p>
-              <p className="mt-6 max-w-[230px] text-body dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                quasi.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-primary text-lg font-bold">
-                Vinzenz Wolpold
-              </h2>
-              <p className="text-primary">// Trompete</p>
-              <p className="mt-6 max-w-[230px] text-body dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                quasi.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-primary text-lg font-bold">Anna Mörtel</h2>
-              <p className="text-primary">// Posaune</p>
-              <p className="mt-6 max-w-[230px] text-body dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                quasi.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-primary text-lg font-bold">
-                Johannes Mehring
-              </h2>
-              <p className="text-primary">// Posaune</p>
-              <p className="mt-6 max-w-[230px] text-body dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                quasi.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-primary text-lg font-bold">
-                Manuel Vildosola
-              </h2>
-              <p className="text-primary">// Tuba</p>
-              <p className="mt-6 max-w-[230px] text-body dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                quasi.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-primary text-lg font-bold">
-                Martin Wiesinger
-              </h2>
-              <p className="text-primary">// Schlagzeug</p>
-              <p className="mt-6 max-w-[230px] text-body dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                quasi.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {bandData.map((member) => {
+              return (
+                <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                  <img
+                    className="w-full h-64 object-cover "
+                    src={member.avatar}
+                    alt={member.name}
+                  />
+                  <div className="p-6">
+                    <h2 className="text-2xl font-bold text-primary">
+                      {member.name}
+                    </h2>
+                    <div className="flex items-center">
+                      <p className="text-primary mt-2">{member.instrument}</p>
+                      <img
+                        src={member.icon}
+                        alt=""
+                        className="w-10 ml-5 mt-1"
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <a href="#" className="text-primary hover:underline">
+                        Read more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         <UserPanel />

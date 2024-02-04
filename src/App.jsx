@@ -1,7 +1,7 @@
 import { useState, useNavigate } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Home, Band, Tour, Gallery, Listen } from './pages/index.js';
+import { Home, Band, Tour, Gallery, Medien, Booking } from './pages/index.js';
 import Navbar from './components/Navbar.jsx';
 import { DarkModeProvider } from './context/DarkModeContext.jsx';
 
@@ -15,9 +15,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/band" element={<Band />} />
-            <Route path="/listen" element={<Listen />} />
+            <Route path="/medien" element={<Medien />} />
             <Route path="/tour" element={<Tour />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/booking" element={<Booking />} />
           </Routes>
         </main>
       </Router>

@@ -45,10 +45,10 @@ function Navbar() {
         <li>
           <NavLink
             className="nav-link"
-            to="/listen"
+            to="/medien"
             onClick={() => closeMenu()}
           >
-            Listen
+            Medien
           </NavLink>
         </li>{' '}
         <li>
@@ -59,10 +59,10 @@ function Navbar() {
         <li>
           <NavLink
             className="nav-link"
-            to="/gallery"
+            to="/booking"
             onClick={() => closeMenu()}
           >
-            Gallery
+            Booking
           </NavLink>
         </li>
       </>

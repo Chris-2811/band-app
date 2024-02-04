@@ -15,7 +15,7 @@ function Home() {
 
   return (
     <div className="container">
-      <div className="pb-16 border-b-4">
+      <div className="pb-6 lg:pb-16 border-b-4">
         <Hero />
       </div>
       <UserPanel />

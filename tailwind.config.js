@@ -27,6 +27,9 @@ export default {
       borderWidth: {
         3: '3px',
       },
+      objectPosition: {
+        custom: 'top 400px',
+      },
     },
   },
   plugins: [],
