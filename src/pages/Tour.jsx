@@ -27,6 +27,7 @@ function Tour() {
         {tourData.map((data, index) => {
           return (
             <li
+              key={data.id}
               className={`md:flex md:items-center lg:max-h-[120px]  md:justify-between lg:grid lg:grid-cols-3 gap-10 xl:gap-16 ${
                 index === tourData.length - 1
                   ? 'border-none mt-8'

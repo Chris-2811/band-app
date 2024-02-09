@@ -25,7 +25,7 @@ function Band() {
               return (
                 <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                   <img
-                    className="w-full h-64 object-cover "
+                    className="w-full h-64 object-cover"
                     src={member.avatar}
                     alt={member.name}
                   />
@@ -40,11 +40,6 @@ function Band() {
                         alt=""
                         className="w-10 ml-5 mt-1"
                       />
-                    </div>
-                    <div className="mt-4">
-                      <a href="#" className="text-primary hover:underline">
-                        Read more
-                      </a>
                     </div>
                   </div>
                 </div>
