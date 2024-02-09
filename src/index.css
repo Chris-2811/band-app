@@ -246,10 +246,6 @@ html.dark input:-webkit-autofill:active {
   z-index: 10;
 }
 
-.gallery-image:hover::after {
-  background: rgba(0, 0, 0, 0.6);
-}
-
 .image-text {
   position: absolute;
   top: 25%;
@@ -263,4 +259,10 @@ html.dark input:-webkit-autofill:active {
 .gallery-image:hover .image-text {
   opacity: 1;
   z-index: 20;
+}
+
+@media (min-width: 1020px) {
+  .gallery-image:hover::after {
+    background: rgba(0, 0, 0, 0.6);
+  }
 }

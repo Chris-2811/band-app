@@ -20,7 +20,7 @@ function Gallery() {
       <Heading title={'Gallerie'} />
       <div className="grid gap-6 mt-6 pb-16 border-b-4 md:mt-10 sm:grid-cols-2 lg:grid-cols-3 ">
         {Object.values(images).map((image) => (
-          <div className="gallery-image cursor-pointer rounded-lg overflow-hidden">
+          <div className="gallery-image  rounded-lg overflow-hidden">
             <img
               src={image}
               alt=""
