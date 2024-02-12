@@ -57,18 +57,19 @@ export const tourData = [
     addresse: 'Dorfplatz in Rasch',
     ort: '90518 Altdorf',
   },
-  {
-    id: 6,
-    title: 'Haberloh Kirchweih; Frühschoppen',
-    datum: 'So, 21.07.2024; ab 10 Uhr',
-    addresse: 'TV 1877 Lauf e.V., Am Haberloh 6',
-    ort: '91207 Lauf',
-  },
+
   {
     id: 7,
     title: 'Laufer Kirwa',
     datum: 'Mo, 08.07.2024; ab 17 Uhr',
     addresse: 'am Kunigundenberg',
+    ort: '91207 Lauf',
+  },
+  {
+    id: 6,
+    title: 'Haberloh Kirchweih; Frühschoppen',
+    datum: 'So, 21.07.2024; ab 10 Uhr',
+    addresse: 'TV 1877 Lauf e.V., Am Haberloh 6',
     ort: '91207 Lauf',
   },
 ];

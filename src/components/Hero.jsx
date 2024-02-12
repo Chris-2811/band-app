@@ -30,7 +30,7 @@ function Hero() {
           dBs - des BRASSd scho!
         </h3>
         <p className="dark:text-white  text-body md:max-w-lg md:mx-auto">
-          Die junge 7-köpfige Blechbläsertruppe hat sich Anfang 2018 durch ein
+          Die junge 8-köpfige Blechbläsertruppe hat sich Anfang 2018 durch ein
           Casting zusammengefunden. Ihr Erfolgsrezept für einen unterhaltsamen
           Abend: Eine geballte Ladung Brass, gemixt mit Stimmungs-, Pop- und
           Blasmusik, abgerundet durch eine Prise Humor, überraschenden Einlagen
